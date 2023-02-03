@@ -4,7 +4,7 @@ import Data.FrameWork;
 public class Menu {
     private final CRUD context;
     Menu(){
-        context = new CRUD();
+        context = new CRUD(); // Do it After Login Sends True Flag
         Initiate();
     }
     public void Initiate(){
@@ -47,12 +47,12 @@ public class Menu {
         int tmp=-1;
         /*Menu*/
         System.out.println("""
-                1- Add Employee
-                2- Remove Employee
-                3- Edit Employee
-                4- Search Employee
-                5- Get Employee List
-                6- EXIT""");
+                    1- Add Employee
+                    2- Remove Employee
+                    3- Edit Employee
+                    4- Search Employee
+                    5- Get Employee List
+                    6- EXIT""");
         while (tmp<0){
             System.out.println("Enter Prompt:");
             tmp = FrameWork.toInt(FrameWork.GetInput());
