@@ -49,5 +49,6 @@ public abstract class FrameWork {
         if (str == regexPattern) return true;
         else return false;
     }
+
 }
 
