@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c023a465-12d2-4127-b386-8707fe042e23" name="Changes" comment="Just tweaking">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <workItem from="1675101357151" duration="12985000" />
       <workItem from="1675270919722" duration="3502000" />
       <workItem from="1675280754340" duration="5529000" />
-      <workItem from="1675523621544" duration="6077000" />
+      <workItem from="1675523621544" duration="6419000" />
     </task>
     <task id="LOCAL-00001" summary="Just tweaking">
       <created>1675422078885</created>
@@ -104,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675424418683</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Just tweaking">
+      <created>1675544563693</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675544563693</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
