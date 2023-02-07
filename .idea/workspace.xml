@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c023a465-12d2-4127-b386-8707fe042e23" name="Changes" comment="Just tweaking">
+    <list default="true" id="c023a465-12d2-4127-b386-8707fe042e23" name="Changes" comment="final1.0">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/postgresql-42.5.3.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmployeeManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EmployeeManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/CRUD.java" afterDir="false" />
@@ -96,7 +97,7 @@
       <workItem from="1675628474303" duration="996000" />
       <workItem from="1675704372100" duration="8661000" />
       <workItem from="1675724089415" duration="1265000" />
-      <workItem from="1675760885837" duration="10155000" />
+      <workItem from="1675760885837" duration="10467000" />
     </task>
     <task id="LOCAL-00001" summary="Just tweaking">
       <created>1675422078885</created>
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675423923032</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="final1.0">
+      <created>1675801074876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675801074876</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +146,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just tweaking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Just tweaking" />
+    <MESSAGE value="final1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="final1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
