@@ -1,4 +1,5 @@
 package Data;
+
 public class Employee {
     private int id;
     private int age;
@@ -6,7 +7,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String emailAddress;
-    private String nationalId;
+    private int nationalId;
 
     public int getAge() {
         return age;
@@ -23,9 +24,15 @@ public class Employee {
             return "Man";
         }
     }
-
+    public boolean getGender (){
+        return Gender;
+    }
     public void setGender(boolean gender) {
         this.Gender = gender;
+    }
+    public void setGender(int gender) {
+        if (gender==1) this.Gender = true;
+        else this.Gender = false;
     }
 
     public String getFirstName() {
@@ -73,20 +80,13 @@ public class Employee {
         }
     }
 
-    public String getNationalId() {
+    public int getNationalId() {
         return nationalId;
     }
 
-    public void setNationalId(String nationalId) {
+    public void setNationalId(int nationalId) {
 
-        if (FrameWork.isNumber(nationalId)) {
-            this.nationalId = nationalId;
-        } else {
-            //Temporary
-            this.nationalId = null;
-            //Temporary
-
-        }
+        this.nationalId=nationalId;
     }
 
 

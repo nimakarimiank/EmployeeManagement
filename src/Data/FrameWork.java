@@ -1,5 +1,5 @@
 package Data;
-
+import java.sql.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,7 +21,24 @@ public abstract class FrameWork {
             throw new RuntimeException(e);
         }
     }
-    public static int toInt(String tmp){
+    public static String GetInput(String message)   {
+        System.out.println(message);
+        String result;
+        try {
+
+            BufferedReader buffer = new BufferedReader(
+                    new InputStreamReader(System.in)
+            );
+            result = buffer.readLine();
+
+            return result;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+        public static int toInt(String tmp){
         if (isNumber(tmp)){
             return Integer.parseInt(tmp);
         }
@@ -49,6 +66,23 @@ public abstract class FrameWork {
         if (str == regexPattern) return true;
         else return false;
     }
+    public static  class DataBaseIntegration {
+        private static final String hostName = "localhost";
+        private static final String portNumber = "5432";
+        private static final String dataBaseName = "employee";
+        private static final String url = "jdbc:postgresql://"+hostName+":"+portNumber+"/"+dataBaseName;
+        public static Connection Connect(String user, String passWord) {
+            Connection connection = null;
+            try {
+                connection = DriverManager.getConnection(url,user,passWord);
+            }
+            catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return connection;
 
+        }
+
+    }
 }
 

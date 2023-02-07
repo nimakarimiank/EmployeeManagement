@@ -2,36 +2,59 @@ import Data.CRUD;
 import Data.FrameWork;
 
 public class Menu {
-    private final CRUD context;
+    private boolean LoginFlag=false;
+    private CRUD context;
     Menu(){
-        context = new CRUD(); // Do it After Login Sends True Flag
+         // Do it After Login Sends True Flag
         Initiate();
     }
     public void Initiate(){
-        System.out.println("Enter Your Security Code:\n");
-        //Login()
-        //SignUp()
+        System.out.println("Already have an account?:\n" +
+                "1- Login 2-Sign-Up\n");
+        int tmp = -1;
+        tmp = FrameWork.toInt(FrameWork.GetInput());
+        switch (tmp){
+            case 1: Login();
+            case 2: SignUp();
+        }
 
+
+    }
+
+    private void SignUp() {
+    }
+
+    private void Login() {
+        System.out.println("Enter Your Security Code:\n");
         boolean  result;
         result = checkSecurityCode();
         if (result){
             System.out.println("Access Granted!");
+            LoginFlag = true;
+            if (LoginFlag){
+                context = new CRUD();
+
+            }
             //Login
             menu();
 
         }
         else {
             /*Exit Prompt*/
-
-            /*Exit Prompt*/
-
-            /*Retry*/
-            System.out.println("Security code is not right\n");
-            Initiate();
-            /*Retry*/
-
+            System.out.println("do you want to sign up?\n1-yes 2-no 3-Exit");
+            int tmp = FrameWork.toInt(FrameWork.GetInput());
+            switch (tmp){
+                case 1:{SignUp();}
+                case 2:{
+                    System.out.println("Security code is not right\n");
+                    Initiate();}
+                case 3:{
+                    break;
+                }
+            }
         }
     }
+
     private boolean checkSecurityCode(){
         String tmp =FrameWork.GetInput(); //is it good or bad ? "this" I mean.
         int securityCode = 1234; // Should Get From Db
@@ -50,9 +73,8 @@ public class Menu {
                     1- Add Employee
                     2- Remove Employee
                     3- Edit Employee
-                    4- Search Employee
-                    5- Get Employee List
-                    6- EXIT""");
+                    4- Get Employee List
+                    5- EXIT""");
         while (tmp<0){
             System.out.println("Enter Prompt:");
             tmp = FrameWork.toInt(FrameWork.GetInput());
@@ -68,7 +90,9 @@ public class Menu {
                 res = context.Create();
                 if (res){
                     System.out.println("Adding Employee");
+
                     System.out.println("Employee Added Successfully!");
+                    menu();
 
                 }
                 else {
@@ -83,7 +107,7 @@ public class Menu {
                 if (res){
                     System.out.println("Adding Employee");
                     System.out.println("Employee Added Successfully!");
-
+                    menu();
                 }
                 else {
                     System.out.println("Adding Employee FAILED!\n Wanna Try Again?\n 1- Yes 2- No:\n");
@@ -94,11 +118,11 @@ public class Menu {
             }
             case 3: {
                 boolean res;
-                res = context.Update();
+                res = context.Update(FrameWork.toInt(FrameWork.GetInput()));
                 if (res){
                     System.out.println("Adding Employee");
                     System.out.println("Employee Added Successfully!");
-
+                    menu();
                 }
                 else {
                     System.out.println("Adding Employee FAILED!\n Wanna Try Again?\n 1- Yes 2- No:\n");
@@ -107,42 +131,15 @@ public class Menu {
                 }
 
             }
+
             case 4: {
 
-                boolean res;
-                res = context.Search();
-                if (res){
-                    System.out.println("Adding Employee");
-                    System.out.println("Employee Added Successfully!");
-
-                }
-                else {
-                    System.out.println("Adding Employee FAILED!\n Wanna Try Again?\n 1- Yes 2- No:\n");
-
-
-                }
-
-            }
-            case 5: {
-                boolean res;
-                res = context.Read();
-                if (res){
-                    System.out.println("Adding Employee");
-                    System.out.println("Employee Added Successfully!");
-
-                }
-                else {
-                    System.out.println("Adding Employee FAILED!\n Wanna Try Again?\n 1- Yes 2- No:\n");
-
-
-                }
-
-            }
-            case 6:{
-                break;
-            }
-            default:{
+                context.Read();
                 menu();
+
+            }
+            case 5:{
+                break;
             }
             /*Cases*/
 
