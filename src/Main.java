@@ -20,9 +20,8 @@ public class Main  {
         CRUD crd = new CRUD();
         List<Employee> employeeList = crd.Read();
         //sort by age
-        employeeList.stream().sorted(Comparator.comparingInt(Employee::getAge)).collect(Collectors.toList());
+        employeeList.stream().sorted(Comparator.comparing(Employee::getAge)).collect(Collectors.toList());
         //sort by national ID
-        employeeList.stream().sorted(Comparator.comparingInt(Employee::getId)).collect(Collectors.toList());
         //
         for (var elem:
                 employeeList) {

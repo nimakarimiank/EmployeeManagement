@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c023a465-12d2-4127-b386-8707fe042e23" name="Changes" comment="final1.0">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="c023a465-12d2-4127-b386-8707fe042e23" name="Changes" comment="final1.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +91,7 @@
       <workItem from="1676134461064" duration="806000" />
       <workItem from="1676390549706" duration="1007000" />
       <workItem from="1676400353194" duration="1946000" />
-      <workItem from="1676498529567" duration="3432000" />
+      <workItem from="1676498529567" duration="3967000" />
     </task>
     <task id="LOCAL-00001" summary="Just tweaking">
       <created>1675422078885</created>
@@ -128,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675801074876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="final1.1">
+      <created>1676502304487</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676502304487</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +148,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Just tweaking" />
     <MESSAGE value="final1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="final1.0" />
+    <MESSAGE value="final1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="final1.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
