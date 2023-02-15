@@ -97,13 +97,11 @@ public class Menu {
                 }
                 else {
                     System.out.println("Adding Employee FAILED!\n Wanna Try Again?\n 1- Yes 2- No:\n");
-
-
                 }
             }
             case 2: {
                 boolean res;
-                res = context.Delete();
+                res = context.Delete(12);
                 if (res){
                     System.out.println("Adding Employee");
                     System.out.println("Employee Added Successfully!");

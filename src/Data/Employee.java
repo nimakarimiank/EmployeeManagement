@@ -8,7 +8,15 @@ public class Employee {
     private String lastName;
     private String emailAddress;
     private int nationalId;
+    Employee(int Age, String FirstName , String LastName, String EmailAddress,boolean Gender,int NationalId){
+    setAge(Age);
+    setLastName(LastName);
+    setFirstName(FirstName);
+    setGender(Gender);
+    setEmailAddress(EmailAddress);
+    setNationalId(NationalId);
 
+    }
     public int getAge() {
         return age;
     }
@@ -90,4 +98,11 @@ public class Employee {
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

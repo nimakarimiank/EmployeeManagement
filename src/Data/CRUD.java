@@ -3,10 +3,8 @@ import Data.Employee;
 
 import javax.swing.plaf.nimbus.State;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,12 +30,18 @@ public class CRUD {
         try {
 
             context = FrameWork.DataBaseIntegration.Connect("postgres", "nimakarimian76");
-            Statement statement = context.createStatement();
             {
                 String sql =
                         "INSERT INTO public.\"Employee\"(age,\"firstName\",\"lastName\",gender,\"emailAddress\",\"nationalId\") VALUES " +
-                                "("+Age+",'"+FirstName+"','"+LastName+"',"+Gender+",'"+EmailAddress+"',"+NationalId+");";
-                res=  statement.executeUpdate(sql);
+                                "(?,?,?,?,?,?);";
+                PreparedStatement stm = context.prepareStatement(sql);
+                stm.setString(2,FirstName);
+                stm.setString(3,LastName);
+                stm.setBoolean(4,Gender);
+                stm.setString(5,EmailAddress);
+                stm.setInt(6,NationalId);
+                stm.executeUpdate();
+
 
             }
 
@@ -66,11 +70,12 @@ public class CRUD {
         try {
             //opening Connection
             context = FrameWork.DataBaseIntegration.Connect("postgres", "nimakarimian76");
-            Statement stm = context.createStatement();
             {
-                String sql = "  DELETE FROM public.\"Employee\" WHERE nationalId="+_nationalId+";";
+                String sql = "  DELETE FROM public.\"Employee\" WHERE nationalId=?;";
 
-                res = stm.executeUpdate(sql);
+                PreparedStatement stm = context.prepareStatement(sql);
+                stm.setInt(1,_nationalId);
+                stm.executeUpdate();
             }
 
         }
@@ -90,28 +95,8 @@ public class CRUD {
         else return false;
 
     }
-    public boolean Delete(){
-        int res = 0;
-        int id = FrameWork.toInt(FrameWork.GetInput());
-        try {
-            //opening Connection
-            context = FrameWork.DataBaseIntegration.Connect("postgres", "nimakarimian76");
-            Statement stm = context.createStatement();
-            {
-                String sql = "  DELETE FROM public.\"Employee\" WHERE id="+id+";";
-
-                res = stm.executeUpdate(sql);
-            }
-
-        }
-        catch (Exception exception){}
-        finally {
-            //close Connection
-        }
-        return false;
-
-    }
-    public void Read (){
+    public List<Employee> Read (){
+        List<Employee> employeeList= new ArrayList<Employee>();
         ResultSet set = null;
         try {
             //opening Connection
@@ -121,9 +106,18 @@ public class CRUD {
                 String sql ="SELECT age, \"firstName\", \"lastName\", gender, \"emailAddress\", \"nationalId\"\n" +
                         "\tFROM public.\"Employee\";";
                 set= stm.executeQuery(sql);
-                while (set.next()){ System.out.println("Selected User is:\nAge="+set.getInt("age")+"\tFirstName="+set.getString("firstName") +"\tLastName="+
-                        set.getString("lastName") +"\tGender="+set.getBoolean("gender") +"\tEmailAddress="+set.getString("emailAddress") +"\tNationalId="+
-                        set.getInt("nationalId") +"\t");}
+//                while (set.next()){ System.out.println("Selected User is:\nAge="+set.getInt("age")+"\tFirstName="+set.getString("firstName") +"\tLastName="+
+//                        set.getString("lastName") +"\tGender="+set.getBoolean("gender") +"\tEmailAddress="+set.getString("emailAddress") +"\tNationalId="+
+//                        set.getInt("nationalId") +"\t");}
+                while (set.next()){
+                    employeeList.add(new Employee(
+                            set.getInt("age"),
+                            set.getString("firstName"),set.getString("lastName"),
+                            set.getString("emailAddress"),set.getBoolean("gender"),
+                            set.getInt("nationalId")
+                    ));
+
+                }
             }
         }
         catch (Exception exception){}
@@ -142,6 +136,7 @@ public class CRUD {
         }
 
 
+        return employeeList;
     }
     public void Read (int _nationalId){
         ResultSet set = null;
@@ -192,13 +187,14 @@ public class CRUD {
         try {
             //opening Connection
             context = FrameWork.DataBaseIntegration.Connect("postgres", "nimakarimian76");
-            Statement getStatement = context.createStatement();
             {
                 //Update Info
                 String sql =" UPDATE public.\"Employee\" SET age="+Age+", \"firstName\"='"+FirstName+"', \"lastName\"='"+LastName+"', gender ="+Gender+"," +
-                        " \"emailAddress\"='"+ EmailAddress+"', \"nationalId\"='"+NationalId+"'  WHERE id="+id+";";
+                        " \"emailAddress\"='"+ EmailAddress+"', \"nationalId\"='"+NationalId+"'  WHERE id=?;";
 
-                getStatement.executeUpdate(sql);
+                PreparedStatement getStatement  = context.prepareStatement(sql);
+                getStatement.setInt(1,id);
+                getStatement.executeUpdate();
 
             }
 
